@@ -24,13 +24,7 @@ if (!id) {
   
 }
 
-//Verifica se está acessando pelo servidor do github:
 
-if (acessando.includes("github")) {
-
-alert("Está parte do site está com problemas...")
-
-}
 const dados = () => {
   
   if (nome && id && acessando) {
