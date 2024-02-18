@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canal CM TUBE</title>
+
+<style>
+  
+  body {
+    
+    background-color: black;
+    
+  }
+  div {
+    
+    background-color: white;
+    margin-top: 200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 2px 4px 3px red;
+  }
+  
+  button {
+    
+    background-color: greenyellow;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px black;
+    
+    
+  }
+  
+  
+</style>
+</head>
+
+<body>
+
+   <div>
+     
+<h3>Entre no nosso CANAL:</h3>
+  <strong>Avisaremos por lá sobre novas temporadas e series novas!</strong>
+     
+     <button onclick="Entrar()">Entrar agora</button>
+     
+     <button onclick="N()">Agora não</button>
+     
+   </div>
+
+<script>
+var data = new Date()
+var mes = data.toLocaleString('pt-BR', { month: 'long' });
+console.log(mes);
+var hora = data.getHours()+":"+data.getMinutes()
+
+var dia = data.getDate() +"/"+mes+"/"
++data.getFullYear()+" Hora: "+hora
+var nome = localStorage.getItem("nome")
+var id = localStorage.getItem("id")
+var recusado = localStorage.getItem("rc")
+if (!recusado) {
+  
+  recusado = true
+  localStorage.setItem("rc",recusado)
+}
+  
+  function Entrar() {
+    
+    recusado = false
+  localStorage.setItem("rc",recusado)
+    window.open("https://whatsapp.com/channel/0029VaK2J8FDuMRdm6yaAU2I")
+    
+    
+  }
+  function N() {
+    
+  fetch('https://api.sheetmonkey.io/form/pQQpZrU83ib6ocCX93j2oS', {
+    
+    method: 'post',
+    headers: {
+      
+      'Accept': 'application/json',
+      'Content-type': 'application/json'
+      
+    },
+    body: JSON.stringify({
+      
+      Usuário: nome,
+      
+      Canal: "Recusado",
+      Data: dia,
+      ID: id
+      
+      
+    })
+    
+    
+  })
+  
+    alert("Clique em OK e aguarde")
+    window.location.href = "index.html"
+    
+    
+  }
+  
+  
+</script>
+</body>
+
+</html>

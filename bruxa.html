@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bruxa</title>
+  
+  <style>
+    
+    * {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+      
+    }
+    
+    body {
+      
+   background-color: black;
+      color: white;
+    }
+    
+    #bruxa {
+      opacity: 0;
+      height: 300px;
+      position: relative;
+      top: 357px;
+      z-index: 4;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    #mesa {
+      
+      height: 100%;
+      width: 100%;
+      position: relative;
+      top: 90px;
+      z-index: 2;
+      
+      
+    }
+    
+    header {
+      
+      color: white;
+      text-align: center;
+      
+      
+    }
+    
+    h2 {
+      
+      margin-top: 100px;
+      
+    }
+    h3 {
+      position: absolute;
+      margin-top: 280px;
+      text-align: center;
+      
+    }
+    
+    #primeiro {
+      
+      
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      z-index: 5;
+      top: 800px;
+      left: 80px;
+      outline: none;
+      box-shadow: 4px 8px 13px blue;
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+      color: blue;
+      
+      
+    }
+    
+    #segundo {
+      
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      z-index: 5;
+      top: 850px;
+      left: 80px;
+      outline: none;
+      box-shadow: 4px 8px 13px red;
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+      color: red;
+      
+    }
+    
+    h4 {
+      
+      position: absolute;
+      top: 830px;
+      left: 160px;
+      z-index: 7;
+    
+      
+      
+    }
+    
+    @keyframes bruxa {
+      
+      0% {
+        
+        opacity: 0;
+        
+      }
+      100% {
+        
+        opacity: 1;
+        
+        
+      }
+      
+    }
+    
+  </style>
+  <link rel="stylesheet" href="fonte.css">
+</head>
+
+<body>
+  
+  <header>
+    
+    <h2>Eu tirarei Sua duvida!</h2>
+    
+    
+    
+  </header>
+
+    <h3 id="msg"><strong>Digite dois animes/séries ou jogos e toque na bola de cristal e eu te digo qual é o melhor!</strong></h3>
+
+  <img id="bruxa" src="bruxa.png" alt="bruxa.png" onerror="erro()" onclick="bola()">
+
+  
+
+<input id="primeiro" type="text" placeholder="Primeiro aqui...">
+ 
+    <h4>OU</h4>
+    
+ <input id="segundo" type="text" placeholder="Segundo aqui...">
+
+  <img id="mesa" src="mesa.png" alt="mesa.png" onerror="erro()">
+
+
+<script>
+var nome = localStorage.getItem("nome")
+if (innerWidth > 690) {
+    
+    document.body.innerHTML = `
+   <h1>Você precisa acessar pelo celular</h1>
+    
+    
+    `
+    
+    
+  }
+
+var acessando = window.location.href;
+var id = localStorage.getItem("id")
+var data = new Date()
+var mes = data.toLocaleString('pt-BR', { month: 'long' });
+console.log(mes);
+var hora = data.getHours()+":"+data.getMinutes()
+var dia = data.getDate() +"/"+mes+"/"
++data.getFullYear()+" Hora: "+hora
+var resultado;
+var series;
+
+
+
+window.scrollTo(0,0)
+  // Criando um novo objeto de áudio
+var meuAudio = new Audio('brilho.mp3')
+
+var bruxa = document.getElementById("bruxa")
+  
+  setTimeout(function() {
+    
+    
+    window.scrollTo({
+      top: 500,
+      left: 0,
+      behavior: 'smooth'
+    });
+    
+    
+    
+    bruxa.style.animationDelay = "2s"
+    bruxa.style.animation = "bruxa 4s ease-in-out forwards"
+    setTimeout(function() {
+      
+       meuAudio.play();
+    },1000)
+   
+    
+  },2000)
+  
+  
+  function erro() {
+    
+    alert("Tivemos um problema, recarregue a página")
+    
+  }
+  
+  function bola() {
+    var anterior;
+    var primeiro = document.getElementById("primeiro").value.toUpperCase()
+    var segundo = document.getElementById("segundo").value.toUpperCase()
+    
+    if (!primeiro || !segundo || primeiro === segundo || primeiro.includes("ANIME") || segundo.includes("ANIME") || segundo.includes("JOGO") || primeiro.includes("JOGO")) {
+      
+      alert("Ocorreu um erro")
+      
+    } else {
+      
+    var msg = document.getElementById("msg")
+      
+     series = [primeiro, segundo]
+    
+var decidir = Math.floor(Math.random()*series.length)
+
+ resultado = series[decidir]
+
+var mensagem = Math.floor(Math.random()*3)+1
+primeiro.value = ""
+segundo.value = ""
+
+if (resultado === anterior) {
+alert("Você ja disse esses nomes")
+
+} else {
+
+if (mensagem === 1) {
+
+msg.innerHTML = `Olha ${nome}, O melhor desses dois sem dúvidas é ${resultado}!`
+}
+if (mensagem === 2) {
+  
+  msg.innerHTML = `Olha ${nome}, Se está em duvida por qual dos dois começar, começe por ${resultado}, garanto que é bom!`
+  
+}
+
+if (mensagem === 3) {
+  
+  msg.innerHTML = `É sério ${nome}? qualquer coisa é melhor que ${resultado}!`
+  
+  
+}
+
+  
+
+}
+  anterior = resultado
+
+msg.style.backgroundColor = "purple"
+msg.style.color = "white"
+msg.style.borderRadius = "20px"
+msg.style.boxShadow = "4px 8px 13px mediumpurple"
+
+
+
+
+
+
+
+meuAudio.play()
+
+  
+
+     
+     
+      
+      
+    }
+    
+    
+    
+    
+  
+  
+    
+    
+    
+  
+  
+</script>
+
+<script src="dados.js">dados.js</script>
+</body>
+
+</html>
