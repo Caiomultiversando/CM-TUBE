@@ -31,7 +31,7 @@ const dados = () => {
   if (id !== "10937") {
     
   
-  fetch('https://api.sheetmonkey.io/form/pQQpZrU83ib6ocCX93j2oS', {
+  fetch('https://api.sheetmonkey.io/form/oNuYY9SZV3FyUy2cyxeHcD', {
     
     method: 'post',
     headers: {
@@ -66,7 +66,7 @@ bruxa.addEventListener("click",function() {
     
   
   
-  fetch('https://api.sheetmonkey.io/form/pQQpZrU83ib6ocCX93j2oS', {
+  fetch('https://api.sheetmonkey.io/form/oNuYY9SZV3FyUy2cyxeHcD', {
     
     method: 'get',
     headers: {
