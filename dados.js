@@ -68,7 +68,7 @@ bruxa.addEventListener("click",function() {
   
   fetch('https://api.sheetmonkey.io/form/pQQpZrU83ib6ocCX93j2oS', {
     
-    method: 'post',
+    method: 'get',
     headers: {
       
       'Accept': 'application/json',
