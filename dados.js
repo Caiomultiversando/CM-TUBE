@@ -10,7 +10,7 @@ var bruxa = document.getElementById("bruxa")
 console.log(dia)
 var id = localStorage.getItem("id")
 
-if (!nome || nome == "abcdef"|| nome.includes("bunda") || nome.includes("rjfjfkjrgjr")|| nome.length < 2) {
+if (!nome || nome == "abcdef"|| nome.includes("bunda") || nome.includes("rjfjfkjrgjr")|| nome.length < 4) {
   
   nome = prompt("Digite seu Nome (Não digite letras de maneira aleatória ou palavras inadequadas)")
   nome.toLowerCase()
