@@ -31,7 +31,7 @@ const dados = () => {
   if (id !== "10937") {
     
   
-  fetch('https://api.sheetmonkey.io/form/oNuYY9SZV3FyUy2cyxeHcD', {
+  fetch('https://formsubmit.co/scaio5428@gmail.com', {
     
     method: 'post',
     headers: {
