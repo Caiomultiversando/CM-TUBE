@@ -9,7 +9,7 @@
   <title>CM TUBE</title>
    <link rel="manifest" href="app.json">
   <!-- HTML -->
-  
+
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
@@ -17,31 +17,35 @@
   <link rel="shortcut icon" type="image/x-icon" href="icone.icon">
 </head>
 
+
+
+
 <body id="estilo" onload="perg()" onclick="close()">
-  
-  
-  
-  
+
+<input id="pesquisar" type="search" placeholder="Pesquisar..." onkeyup="pesquisar()">
+
+
+
   <img id="bru" src="bruxa.png" alt="bruxa.png" onclick="bruxaa()">
-  
-  
+
+
   <script>
-    
+
     function bruxaa() {
-      
+
       window.location.href = "bruxa.html"
-      
-      
+
+
     }
-    
+
   </script>
-  
-  
-  
+
+
+
   <script src="main.js"></script>
   <script src="ads.js">ads.js</script>
   <script>
-  
+
   function solicitarPermissaoAudio() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({ audio: true })
@@ -58,31 +62,31 @@
   }
 
   }
-  
-  
+
+
     var hora = new Date
 var hr = hora.getHours()
 
 var estil = document.getElementById('estilo')
 
     if (hr > 6 && hr < 13) {
-  
+
   estil.style.backgroundImage = "url('tarde.png')"
-  
-  
-  
+
+
+
 } else {
-  
+
   estil.style.backgroundImage = "url('fundo3.jpg')"
-  
-  
+
+
 }
     function compartilhar() {
     if (navigator.share) {
         navigator.share({
    title: 'CM TUBE!',
    text: `Novo aplicativo para você assistir animes!🤭👍* https://www.mediafire.com/file/uz6sl83lfgb6myi/CM_TUBE_v1.apk/file`,
-    
+
         })
  .then(() => console.log('Compartilhado com sucesso'))
   .catch((error) => console.error('Erro ao compartilhar', error));
@@ -96,24 +100,24 @@ var estil = document.getElementById('estilo')
     if(confirm("Quital compartilhar o site?")) {
     pergunte = 1
     localStorage.setItem("pergunta",pergunte)
-    
+
     window.open("https://wa.me/?text=Achei esse site incrível, da uma zoiada!"+" https://animeicon.indie.af")
-    
+
   } else {
-    
+
     alert("Não esquece de fazer isso depois hein!")
-    
-    
+
+
   }
     }
     }
-    
-    
+
+
   </script>
-  
+
   <script src="dados.js">dados.js</script>
-  
-  
-  <button style="background-color: white; border: solid 4px greenyellow; margin: 20px; color: black; box-shadow: 4px 8px 13px greenyellow; padding: 10px;" onclick="compartilhar()">Compartilhar</button>
+
+<br>
+  <button style="background-color: white; border: solid 4px greenyellow; margin: 20px; color: black; box-shadow: 4px 8px 13px greenyellow; padding: 10px; margin-left: auto; margin-right: auto;" onclick="compartilhar()">Compartilhar</button>
 </body>
 </html>
