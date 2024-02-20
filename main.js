@@ -63,10 +63,18 @@ h2.style.margin = "0px"
   window.location.href = "solo.html"
    
  }
- 
- //opções de apenas dublados:
+ var br = document.createElement("br")
+document.body.appendChild(br)
+
+
+//Roleta dos botões:
+
+var roletaButon = document.createElement("div")
+document.body.appendChild(roletaButon)
+roletaButon.id = "roletaButon"
+ //opção de apenas dublados:
  var dublados = document.createElement("button")
- document.body.appendChild(dublados)
+ roletaButon.appendChild(dublados)
  
  dublados.style.padding = 10 + "px"
  dublados.style.backgroundColor = "yellow"
@@ -80,12 +88,64 @@ h2.style.margin = "0px"
    
  })
  
+//opção de Mangás:
+
+var manga = document.createElement("button")
+roletaButon.appendChild(manga)
+manga.innerHTML = "Mangás"
+manga.style.margin = 8 + "px"
+manga.style.padding = 8 + "px"
+manga.style.backgroundColor = "yellow"
+manga.style.border = "none"
+manga.style.fontWeight = "bold"
+
+manga.addEventListener("click" ,function() {
+  
+  alert("Os mangás chegaram em breve!")
+  
+})
  
+ //chat
+ var chat = document.createElement("button")
+roletaButon.appendChild(chat)
+chat.innerHTML = "Chat conversa"
+chat.style.margin = 8 + "px"
+chat.style.padding = 8 + "px"
+chat.style.backgroundColor = "yellow"
+chat.style.border = "none"
+chat.style.fontWeight = "bold"
+
+chat.addEventListener("click",function() {
+  
+  
+  window.open("https://chat.whatsapp.com/LyaduIK84HA4iOJMJ4gGuY")
+  
+  
+})
+ 
+ //Seguir Canal:
+ var canal = document.createElement("button")
+ roletaButon.appendChild(canal)
+ canal.innerHTML = "Seguir Canal"
+ canal.style.margin = 8 + "px"
+ canal.style.padding = 8 + "px"
+ canal.style.backgroundColor = "yellow"
+ canal.style.border = "none"
+ canal.style.fontWeight = "bold"
+ 
+ 
+ canal.addEventListener("click",function() {
+   
+   window.open("https://whatsapp.com/channel/0029VaK2J8FDuMRdm6yaAU2I")
+   
+   
+ })
+
  //divisão (linha):
  
  
 var hr = document.createElement("hr")
-document.body.appendChild(hr)
+ document.body.appendChild(hr)
  
  hr.style.border = "solid 3px red"
  hr.style.backgroundColor = "deeppink"
@@ -498,7 +558,20 @@ estilo.innerHTML = `body {
         display: inline-block;
         margin: 5px;
     }
-            
+         #roletaButon {
+         background-color: transparent;
+         
+         width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: none;
+         }
+        
+        #roletaButon button {
+         
+         opacity: 1;
+         
+         }
             
      #dub {
      
@@ -522,8 +595,21 @@ estilo.innerHTML = `body {
      }
      
      }
-          
+      
           `
   
  
- 
+ function pesquisar() {
+    var input = document.getElementById("pesquisar").value.toLowerCase();
+    var roleta = document.getElementById("roleta");
+    var animes = roleta.getElementsByTagName("img");
+    
+    for (var i = 0; i < animes.length; i++) { 
+        var animeNome = animes[i].src.toLowerCase(); // Supondo que o nome do anime esteja na URL da imagem
+        if (!animeNome.includes(input)) {
+            animes[i].style.display = "none";
+        } else {
+            animes[i].style.display = "inline-block"; // ou qualquer outro estilo adequado ao seu layout
+        }
+    }
+}
