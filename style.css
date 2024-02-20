@@ -32,3 +32,55 @@ img {
   }
   
 }
+
+img {
+  
+  cursor: pointer;
+  
+}
+body {
+  
+  color: white;
+  
+  
+}
+#bru {
+  
+  background-color: cyan;
+  height: 70px;
+  position: fixed;
+  top: 500px;
+  left: 20px;
+  z-index: 10;
+  animation: bru 2s ease-in-out infinite alternate-reverse;
+  border-radius: 20px;
+  box-shadow: 15px 5px 16px white;
+}
+
+@keyframes bru {
+  
+  0% {
+    
+    background-color: blue;
+    
+    
+  }
+  100% {
+    
+    background-color: red;
+    
+  }
+  
+}
+
+
+  #pesquisar {
+        
+      background-color: lightgray;
+      border-radius: 20px;
+      padding: 10px;
+      outline: none;
+      border: none;
+        
+        
+        }
