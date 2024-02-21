@@ -73,18 +73,17 @@ var roletaButon = document.createElement("div")
 document.body.appendChild(roletaButon)
 roletaButon.id = "roletaButon"
  //opção de apenas dublados:
- var dublados = document.createElement("button")
- roletaButon.appendChild(dublados)
- 
- dublados.style.padding = 10 + "px"
- dublados.style.backgroundColor = "yellow"
- dublados.style.border = "none"
- dublados.innerHTML = "Ver Dublados"
- dublados.id = "dub"
- 
- dublados.addEventListener("click",function() {
+ var jogos = document.createElement("button")
+ roletaButon.appendChild(jogos)
+ jogos.innerHTML = "Jogos"
+jogos.style.margin = 8 + "px"
+jogos.style.padding = 8 + "px"
+jogos.style.backgroundColor = "yellow"
+jogos.style.border = "none"
+jogos.style.fontWeight = "bold"
+ jogos.addEventListener("click",function() {
    
-   alert("Ainda é uma área inacabada... volte depois")
+   window.location.href = "bruxa.html"
    
  })
  
