@@ -237,6 +237,22 @@ doutei.addEventListener("click",function() {
   
 })
 
+//Tanaka-kun wa Itsumo Kedaruge:
+
+
+var tanaka = document.createElement("img")
+roleta.appendChild(tanaka)
+tanaka.src = 'Tanaka-kun-wa-Itsumo-Kedaruge-manga-volume-12-capa.jpg'
+
+tanaka.style.height = 200 + "px"
+
+tanaka.addEventListener("click",function() {
+  
+  window.location.href = 'tanaka.html'
+  
+  
+})
+
  //Menu:
  
  
