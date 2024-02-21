@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil</title>
+  
+  <style>
+    
+    * {
+      
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+      
+    }
+    
+    
+    body {
+      
+      
+      background-color: black;
+      color: white;
+      text-align: center;
+      
+      
+    }
+    
+    #gostos {
+
+   background-color: mediumpurple;
+   color: white;
+   font-weight: bold;
+   border-radius: 20px;
+   padding: 10px;
+      margin: 10px;
+      
+    }
+    
+    #bio {
+      
+      background-color: yellow;
+   color: blue;
+   font-weight: bold;
+   border-radius: 20px;
+   padding: 10px;
+      
+      
+    }
+    
+    #nft, #NFT {
+      
+      background-color: blueviolet;
+      
+      
+      overflow-x: auto;
+      white-space: nowrap;
+      height: 160px;
+      width: 100%;
+      margin: 10px;
+      margin-left: 0px;
+      
+      
+    }
+    section {
+      
+      display: grid;
+      
+    }
+    
+    #nft img {
+      
+      height: 160px;
+      margin: 5px;
+      margin-top: 0;
+      
+    }
+    #NFT img {
+      
+      height: 160px;
+      margin: 5px;
+      margin-top: 0;
+      
+    }
+    #perfil {
+      
+      height: 200px;
+      border-radius: 20px;
+      
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2 onclick="altera()" id="nome"></h2>
+    <h4 id="id"></h4>
+   <img id="perfil" src="" alt="">
+    <h2 id="saldo"></h2>
+    <p id="bio" onclick="bio()">Clique aqui e fale sobre você</p>
+    
+    
+    <h4 onclick="gosto()" id="gostos">clique aqui para definir seus gostos. <br>(Exemplo: ação, romance, ficção)</h4>
+    
+  </header>
+
+<hr>
+  <section>
+    
+    <h3>Em alta:</h3>
+    <div id="NFT">
+      
+      <img src="Sukuna.png" alt="Sukuna.png" onclick="sukuna()">
+      
+      <img src="Yuji.png" alt="Yuji." onclick="yuji()">
+      
+      
+      
+    </div>
+    
+    <br>
+    <h4>Recomendados:</h4>
+    <div id="nft">
+      
+      <img id="hentai1" src="Nfts/boruto.png" alt="">
+      
+      <img id="hentai2" src="Nfts/luffyXnami.png" alt="Nfts/luffyXnami.png">
+      
+      <img id="hentai3" src="Nfts/borutox.png" alt="Nfts/borutox.png">
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+  </section>
+
+
+
+
+
+
+<script>
+  //nome e id:
+  var ID = localStorage.getItem("id")
+  var nome = localStorage.getItem("nome")
+  
+  function altera() {
+    
+    nome = prompt("Qual seu novo nome?")
+    localStorage.setItem("nome",nome)
+    location.reload()
+    
+  }
+
+
+
+
+var saldo = localStorage.getItem("saldo")
+
+if (saldo === null) {
+  
+  saldo = 65
+  localStorage.setItem("saldo",saldo)
+  
+}
+
+
+
+  var moedas = document.getElementById("saldo").innerHTML = `🪙 ${saldo}`
+  var selecionado = localStorage.getItem("selecionado")
+ var mochila = localStorage.getItem("mochila") 
+ if (mochila === null || !mochila.length) {
+      
+      mochila = []
+      localStorage.setItem("mochila",mochila)
+    }
+var NFT = localStorage.getItem("NFT")  
+var perfil = document.getElementById("perfil")
+  
+  if (NFT === null) {
+    
+    perfil.src = "https://i.imgur.com/qqTuRfR.jpg"
+    
+    
+  }
+  
+  
+  //comprar:
+  
+  function sukuna() {
+    
+    if (!mochila.includes("sukuna")) {
+    if (saldo >= 700) {
+      
+      if(confirm("Deseja comprar essa por 700?")) {
+        
+    mochila.push("sukuna")
+    localStorage.setItem("mochila",mochila)
+    saldo = saldo - 700
+    localStorage.setItem("saldo",saldo)
+    alert("Compra realizada!")
+        
+      }
+      
+      
+    } else {
+      
+      alert("Você não tem essa figurinha e nem tem saldo para comprar. PREÇO: 700.")
+      
+      
+    }
+    } else {
+      
+      
+      
+      selecionado = "sukuna"
+      localStorage.setItem("selecionado",selecionado)
+      
+      alert("A figurinha foi definida.")
+      
+      
+    }
+    
+    
+    
+  }
+  
+  //Sistema se Compras:
+  
+  
+  function yuji() {
+    
+    if (!mochila.includes("yuji")) {
+    if (saldo >= 100) {
+      
+      if(confirm("Deseja comprar essa por 100?")) {
+        
+    mochila.push("yuji")
+    localStorage.setItem("mochila",mochila)
+    saldo = saldo - 100
+    localStorage.setItem("saldo",saldo)
+    alert("Compra realizada!")
+        
+      }
+      
+      
+    } else {
+      
+      alert("Você não tem essa figurinha e nem tem saldo para comprar. PREÇO: 100.")
+      
+      
+    }
+    } else {
+      
+      
+      
+      selecionado = "yuji"
+      localStorage.setItem("selecionado",selecionado)
+      
+      alert("A figurinha foi definida.")
+      
+      
+    }
+    
+    
+    
+  }
+  
+  
+  
+</script>
+
+<script>
+
+ var a = localStorage.getItem("bio")
+ 
+ if (a.length > 0) {
+   
+   var biografia = document.getElementById("bio")
+   biografia.innerHTML = a
+   
+   
+ }
+
+setInterval(function() {
+    
+    if (selecionado === "yuji") {
+      
+      perfil.src = "Yuji.png"
+      
+      
+    }
+    if (selecionado === "sukuna") {
+      
+      perfil.src = "Sukuna.png"
+      
+    }
+      
+      
+      
+      
+    
+    
+  },1000)
+var gostoss = localStorage.getItem("gostoss")
+
+
+
+var gostos = document.getElementById("gostos")
+
+setInterval(function() {
+  
+  
+  if (gostoss.length > 0) {
+gostos.innerHTML = "Meus Gostos: "+gostoss
+}
+  
+},200)
+
+  
+  
+  function gosto() {
+  var a = prompt("Digite seus gostos e separe com vírgulas. Exemplo: ação, ficção, romance");
+  gostoss = a.toUpperCase();
+  localStorage.setItem("gostoss", gostoss);
+  console.log(gostoss);
+}
+  function bio() {
+    
+    var biografia = document.getElementById("bio")
+    
+     a = prompt("Digite algo sobre você")
+localStorage.setItem("bio",a)
+biografia.innerHTML = a
+    
+    
+  }
+  //mostrar de acordo com os gostos mencionados:
+  var hentai1 = document.getElementById("hentai1")
+  var hentai2 = document.getElementById("hentai2")
+  var hentai3 = document.getElementById("hentai3")
+  
+  
+  if (gostoss.includes("HENTAI")) {
+    
+    
+    
+    hentai1.style.display = "block"
+    hentai2.style.display = "block"
+    hentai3.style.display = "block"
+    
+    
+    
+  } else {
+    
+    
+    
+    hentai1.style.display = "none"
+    hentai2.style.display = "none"
+    hentai3.style.display = "none"
+    
+  }
+  
+  
+
+    //nome e id:
+    
+    var neme = document.getElementById("nome")
+    neme.innerHTML = "@"+nome
+  
+    var IDD = document.getElementById("id")
+    IDD.innerHTML = ID
+  
+</script>
+<script src="dados.js">dados.js</script>
+</body>
+
+</html>
