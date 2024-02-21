@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -126,10 +126,11 @@
     <h4>Recomendados:</h4>
     <div id="nft">
       
-      <img id="hentai1" src="images - 2024-02-21T075821.987.jpeg" alt="">
+      <img id="hentai1" src="Nfts/boruto.png" alt="" style="display: none;">
       
-      <img id="hentai2" src="hima.png" alt="Nfts/luffyXnami.png">
+      <img id="hentai2" src="Nfts/luffyXnami.png" alt="Nfts/luffyXnami.png" style="display: none;">
       
+      <img id="hentai3" src="Nfts/borutox.png" alt="Nfts/borutox.png" style="display: none;">
       
       
       
@@ -310,19 +311,24 @@ setInterval(function() {
     
   },1000)
 var gostoss = localStorage.getItem("gostoss")
+if (gostoss === null || gostoss === undefined) {
+  
+  gostoss = "t"
+  
+}
 
 
 
-var gostos = document.getElementById("gostos")
 
 setInterval(function() {
-  
-  
-  if (gostoss.length > 0) {
-gostos.innerHTML = "Meus Gostos: "+gostoss
-}
-  
-},200)
+    var gostosElement = document.getElementById("gostos");
+
+    if (!gostoss || gostoss.trim() === "") {
+        gostosElement.textContent = "Meus Gostos: "; // Define a mensagem padrão
+    } else {
+        gostosElement.textContent = "Meus Gostos: " + gostoss; // Define a mensagem com os gostos
+    }
+}, 200);
 
   
   
@@ -342,31 +348,7 @@ biografia.innerHTML = a
     
     
   }
-  //mostrar de acordo com os gostos mencionados:
-  var hentai1 = document.getElementById("hentai1")
-  var hentai2 = document.getElementById("hentai2")
-  
-  
-  
-  if (gostoss.includes("HENTAI")) {
-    
-    
-    
-    hentai1.style.display = "block"
-    hentai2.style.display = "block"
-    
-    
-    
-    
-  } else {
-    
-    
-    
-    hentai1.style.display = "none"
-    hentai2.style.display = "none"
-    
-    
-  }
+
   
   
 
@@ -377,6 +359,34 @@ biografia.innerHTML = a
   
     var IDD = document.getElementById("id")
     IDD.innerHTML = ID
+  
+</script>
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    // Lógica para verificar gostos
+    var hentai1 = document.getElementById("hentai1");
+    var hentai2 = document.getElementById("hentai2");
+    var hentai3 = document.getElementById("hentai3");
+  
+    if (!gostoss || !gostoss.includes("HENTAI")) {
+        hentai1.style.display = "none";
+        hentai2.style.display = "none";
+        hentai3.style.display = "none";
+    } else {
+        hentai1.style.display = "block";
+        hentai2.style.display = "block";
+        hentai3.style.display = "block";
+    }
+});
+
+    
+  
+  
+  
+  
+  
+  
   
 </script>
 <script src="dados.js">dados.js</script>
