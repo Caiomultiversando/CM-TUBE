@@ -26,14 +26,36 @@
 
 
 
-  <img id="bru" src="bruxa.png" alt="bruxa.png" onclick="bruxaa()">
+  <img id="perfil" onclick="perfil()">
 
 
   <script>
+  
+  var selecionado = localStorage.getItem("selecionado")
+  var perfi = document.getElementById("perfil")
+  if (selecionado === "sukuna") {
+    
+    perfi.src = "Sukuna.png"
+    
+    
+  }
+  
+  if (selecionado === "yuji") {
+    
+    perfi.src = "Yuji.png"
+    
+    
+  }
+  
+  if (selecionado === null) {
+        
+        perfil.src = "perfil.png"
+        
+      }
 
-    function bruxaa() {
+    function perfil() {
 
-      window.location.href = "bruxa.html"
+      window.location.href = "perfil.html"
 
 
     }
