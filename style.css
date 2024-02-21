@@ -3,48 +3,13 @@ img {
   cursor: pointer;
   
 }
-
-#perfil {
-  
-  background-color: cyan;
-  height: 70px;
-  position: fixed;
-  top: 500px;
-  left: 20px;
-  z-index: 10;
-  animation: bru 2s ease-in-out infinite alternate-reverse;
-  border-radius: 20px;
-  box-shadow: 15px 5px 16px white;
-}
-
-@keyframes bru {
-  
-  0% {
-    
-    background-color: blue;
-    
-    
-  }
-  100% {
-    
-    background-color: red;
-    
-  }
-  
-}
-
-img {
-  
-  cursor: pointer;
-  
-}
 body {
   
   color: white;
   
   
 }
-#bru {
+#perfil {
   
   background-color: cyan;
   height: 70px;
