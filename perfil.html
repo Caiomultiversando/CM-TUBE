@@ -91,6 +91,16 @@
       
     }
     
+    #vds {
+      
+      background-color: greenyellow;
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      
+      
+    }
   </style>
 </head>
 
@@ -106,6 +116,7 @@
     
     <h4 onclick="gosto()" id="gostos">clique aqui para definir seus gostos. <br>(Exemplo: ação, romance, ficção)</h4>
     
+    <button id="vds">Videos aleatórios: Ativado</button>
   </header>
 
 <hr>
@@ -126,11 +137,11 @@
     <h4>Recomendados:</h4>
     <div id="nft">
       
-      <img id="hentai1" src="hima.png" alt="" style="display: none;">
+      <img id="hentai1" src="Nfts/boruto.png" alt="" style="display: none;">
       
-      <img id="hentai2" src="images - 2024-02-21T075821.987.jpeg" alt="Nfts/luffyXnami.png" style="display: none;">
+      <img id="hentai2" src="Nfts/luffyXnami.png" alt="Nfts/luffyXnami.png" style="display: none;">
       
- 
+      <img id="hentai3" src="Nfts/borutox.png" alt="Nfts/borutox.png" style="display: none;">
       
       
       
@@ -367,24 +378,65 @@ biografia.innerHTML = a
     // Lógica para verificar gostos
     var hentai1 = document.getElementById("hentai1");
     var hentai2 = document.getElementById("hentai2");
-    
+    var hentai3 = document.getElementById("hentai3");
+  
     if (!gostoss || !gostoss.includes("HENTAI")) {
         hentai1.style.display = "none";
         hentai2.style.display = "none";
-        
+        hentai3.style.display = "none";
     } else {
         hentai1.style.display = "block";
         hentai2.style.display = "block";
-        
+        hentai3.style.display = "block";
     }
 });
 
     
+</script>
+<script>
+  var vds = localStorage.getItem("vds")
+  if (vds === null) {
+    
+    vds = "ativado"
+    localStorage.setItem("vds",vds)
+    
+  }
+  var corvds = document.getElementById("vds")
+  
+  corvds.addEventListener("click", function() {
+    
+    if (vds =="ativado") {
+      
+      vds = "desativado"
+      localStorage.setItem("vds",vds)
+      
+    } else {
+      
+      vds = "ativado"
+      localStorage.setItem("vds",vds)
+    }
   
   
   
+  })
   
-  
+  setInterval(()=> {
+    
+    
+    if (vds === "desativado") {
+      
+      corvds.style.backgroundColor = "red"
+      corvds.innerHTML = "Videos aleatórios: Desativado"
+      
+    } else {
+      
+      corvds.style.backgroundColor = "greenyellow"
+      corvds.innerHTML = "Videos aleatórios: Ativado"
+      
+    }
+    
+    
+  },100)
   
   
 </script>
