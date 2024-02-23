@@ -1,3 +1,5 @@
+let adsVideo = Math.floor(Math.random()*3)+1
+let vds = localStorage.getItem("vds")
 let ads = Math.floor(Math.random()*4)+1
 let recusado = localStorage.getItem("rc")
 if (ads === 4) {
@@ -7,3 +9,11 @@ if (ads === 4) {
   }
   
 }
+
+if (adsVideo === 3 && vds == "ativado") {
+  
+ window.location.href = "videos.html"
+  
+  
+}
+
