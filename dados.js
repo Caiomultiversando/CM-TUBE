@@ -60,7 +60,7 @@ const dados = () => {
 
 dados()
 
-Window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function() {
 
 
 
