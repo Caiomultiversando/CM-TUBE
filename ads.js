@@ -10,7 +10,7 @@ if (ads === 4) {
   
 }
 
-if (adsVideo === 3 && vds == "ativado") {
+if (adsVideo === 3 && vds == "ativado" && innerWidth < 690) {
   
  window.location.href = "videos.html"
   
