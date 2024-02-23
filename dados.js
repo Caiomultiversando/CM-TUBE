@@ -60,6 +60,29 @@ const dados = () => {
 
 dados()
 
+Window.addEventListener("DOMContentLoaded", function() {
+
+
+
+    (function(d, w, c) {
+        w.ChatraID = 'LQnrWiXFxKmhKMTta';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+
+
+    window.ChatraGroupID = 'TtkwJBL5XttBEYvZb';
+
+
+
+})
+
+
 bruxa.addEventListener("click",function() {
   
   setTimeout(function() {
