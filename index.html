@@ -21,6 +21,14 @@
 
 
 <body id="estilo" onload="perg()" onclick="close()">
+  
+  <dialog id="dialogo">
+  <h3>Parabéns!</h3>
+  
+  <p id="recom"></p>
+    
+    
+  </dialog>
 
 <input id="pesquisar" type="search" placeholder="Pesquisar..." onkeyup="pesquisar()">
 
@@ -30,27 +38,27 @@
 
 
   <script>
-  
+
   var selecionado = localStorage.getItem("selecionado")
   var perfi = document.getElementById("perfil")
   if (selecionado === "sukuna") {
-    
+
     perfi.src = "Sukuna.png"
-    
-    
+
+
   }
-  
+
   if (selecionado === "yuji") {
-    
+
     perfi.src = "Yuji.png"
-    
-    
+
+
   }
-  
+
   if (selecionado === null) {
-        
+
         perfil.src = "perfil.png"
-        
+
       }
 
     function perfil() {
@@ -138,6 +146,7 @@ var estil = document.getElementById('estilo')
   </script>
 
   <script src="dados.js">dados.js</script>
+  <script src="avisos.js">avisos.js</script>
 
 <br>
   <button style="background-color: white; border: solid 4px greenyellow; margin: 20px; color: black; box-shadow: 4px 8px 13px greenyellow; padding: 10px; margin-left: auto; margin-right: auto;" onclick="compartilhar()">Compartilhar</button>
