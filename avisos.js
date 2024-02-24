@@ -11,7 +11,7 @@ if(entregue == null) {
 }
 console.log(ID)
 if (entregue == "false") {
-  if (ID == 55642 || ID == 16415|| ID == 35516 || ID == 14370) {
+  if (ID == 16415|| ID == 35516 || ID == 14370 || ID == 61474) {
   dialogo.showModal()
   msg.innerHTML = `Opa ${nome}, nossa equipe te enviou 1200 moedas!<br><br>
   <button onclick="resgate()" style="background-color: greenyellow; color: black; font-weight: bold; border-radius: 20px; border: none; padding: 20px;">Resgatar</button>`
