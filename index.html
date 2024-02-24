@@ -151,7 +151,19 @@ var estil = document.getElementById('estilo')
 <br>
   <button style="background-color: white; border: solid 4px greenyellow; margin: 20px; color: black; box-shadow: 4px 8px 13px greenyellow; padding: 10px; margin-left: auto; margin-right: auto;" onclick="compartilhar()">Compartilhar</button>
 
-
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "2b7dc912-f087-4ed9-ab42-1437563dfb5f",
+      safari_web_id: "web.onesignal.auto.399b8e00-4d8c-471a-9e28-27f67ae2986b",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
 
 
 </body>
