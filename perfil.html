@@ -101,6 +101,20 @@
       
       
     }
+    
+      #dialogo {
+          
+          background-color: white;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 50%;
+          padding: 20px;
+          border-radius: 20px;
+          box-shadow: 2px 4px 8px white;
+          outline: none;
+          border: none;
+          
+        }
   </style>
 </head>
 
@@ -120,6 +134,14 @@
   </header>
 
 <hr>
+<dialog id="dialogo">
+  
+<h2>Ops..
+  </h2>
+  <p>Estamos com problemas no funcionamento do perfil...</p>
+  
+  <button style="background-color: red; color: white; font-weight: bold; border-radius: 10px; border: none; padding: 10px;" onclick="fechar()">Fechar</button>
+</dialog>
   <section>
     
     <h3>Em alta:</h3>
@@ -303,13 +325,13 @@ var perfil = document.getElementById("perfil")
 
 setInterval(function() {
     
-    if (selecionado === "yuji") {
+    if (selecionado == "yuji") {
       
       perfil.src = "Yuji.png"
       
       
     }
-    if (selecionado === "sukuna") {
+    if (selecionado == "sukuna") {
       
       perfil.src = "Sukuna.png"
       
@@ -380,7 +402,9 @@ biografia.innerHTML = a
     var hentai2 = document.getElementById("hentai2");
     var hentai3 = document.getElementById("hentai3");
   
-    if (!gostoss || !gostoss.includes("HENTAI")) {
+    var gostoss = localStorage.getItem("gostoss");
+  
+    if (!gostoss || !gostoss.toUpperCase().includes("HENTAI")) {
         hentai1.style.display = "none";
         hentai2.style.display = "none";
         hentai3.style.display = "none";
@@ -437,6 +461,27 @@ biografia.innerHTML = a
     
     
   },100)
+  
+  
+</script>
+<script>
+var dialogo = document.getElementById("dialogo")
+
+  setTimeout(() => {
+    
+    
+dialogo.showModal()
+    
+    
+  },3000)
+  
+  
+  function fechar() {
+    
+    window.location.href = "index.html"
+    
+  }
+  
   
   
 </script>
