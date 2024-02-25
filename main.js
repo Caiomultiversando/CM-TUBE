@@ -252,6 +252,20 @@ tanaka.addEventListener("click",function() {
   
 })
 
+//Horimya:
+
+var Horimya = document.createElement("img")
+roleta.appendChild(Horimya)
+Horimya.style.height = 200 + "px"
+Horimya.src = "horimya.png"
+
+Horimya.addEventListener("click",function() {
+  
+  window.location.href = "horimya.html"
+  
+  
+})
+
  //Menu:
  
  
