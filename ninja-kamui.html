@@ -54,7 +54,9 @@
     window.open("https://drive.google.com/drive/folders/1C8s9aQe6LZcRHziTDA8JDIhuFFfDSJlt")
     
   }
-  
+  window.onbeforeunload = function() {
+    return "Tem certeza que deseja sair?";
+};
   
 </script>
 <script src="dados.js">dados.js</script>
